@@ -6,16 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Install Node.js
-         - uses: actions/setup-node@v4
-          with:
-            node-version: 20
-            cache: 'npm'
-            cache-dependency-path: subdir/package-lock.json
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: subdir/package-lock.json
 
-       - name: Install dependencies
+      - name: Install dependencies
         run: npm install
 
       - name: Cypress run
