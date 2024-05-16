@@ -7,6 +7,7 @@ export default function SearchForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const query = searchParams.get('q')
+  if(!query){ return null}
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
