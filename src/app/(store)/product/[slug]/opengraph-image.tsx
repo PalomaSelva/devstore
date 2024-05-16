@@ -30,7 +30,7 @@ export default async function OgImage({
   params: { slug: string }
 }) {
   const product = await getProductBySlug(params.slug)
-  const productImageURL = new URL(product.image, env.NEXT_PUBLIC_BASE_URL).toString()
+  const productImageURL = new URL(product.image, env.APP_URL).toString()
   return new ImageResponse(
     (
       // ImageResponse JSX element
